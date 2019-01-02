@@ -1,0 +1,5 @@
+/logs/
+
+/target/
+/.mvn/wrapper/maven-wrapper.jar
+pom.xml.versionsBackup
