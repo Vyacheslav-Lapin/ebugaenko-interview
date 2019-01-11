@@ -16,7 +16,7 @@
 
     <!-- libs -->
     <log4j-slf4j-impl.version>2.11.1</log4j-slf4j-impl.version>
-    <vavr.version>0.9.2</vavr.version>
+    <vavr.version>1.0.0-alpha-2</vavr.version>
     <lombok.version>1.18.4</lombok.version>
     <checker.version>2.5.8</checker.version>
     <annotations.version>16.0.3</annotations.version>

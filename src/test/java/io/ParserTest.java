@@ -35,7 +35,7 @@ class ParserTest {
   @Test
   @SneakyThrows
   @DisplayName("\"getContent\" method works correctly")
-  void testParser() {
+  void testGetContent() {
     assertThat(parser.getContent())
       .isEqualTo(fileContent);
   }
@@ -55,5 +55,24 @@ class ParserTest {
     parser.saveContent(CONTENT);
     assertThat(Files.readString(path)).isEqualTo(CONTENT);
     Files.writeString(path, fileContent);
+  }
+
+//  @Test
+//  @DisplayName("\"getContent\" method is not closing resource")
+//  void testGetContentIsNotClosingResource() {
+//    var fileNotFoundException = assertThrows(FileNotFoundException.class, () -> {
+//        for (int i = 0; i < 20_000; i++)
+//          testGetContent();
+//      }
+//    );
+//    assertThat(fileNotFoundException.getMessage())
+//      .endsWith("(Too many open files)");
+//  }
+
+  @Test
+  @DisplayName("\"getContent\" method is closing resource")
+  void testGetContentIsClosingResource() {
+    for (int i = 0; i < 20_000; i++)
+      testGetContent();
   }
 }
