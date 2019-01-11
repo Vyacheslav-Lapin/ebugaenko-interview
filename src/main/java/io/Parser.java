@@ -14,13 +14,13 @@ import static lombok.AccessLevel.PRIVATE;
 @FieldDefaults(level = PRIVATE)
 public class Parser {
   File file;
-
-  public synchronized File getFile() {
-    return file;
+  
+  public Parser(final File file) {
+    this.file = file;
   }
 
-  public synchronized void setFile(File f) {
-    file = f;
+  public File getFile() {
+    return file;
   }
 
   public String getContent() throws IOException {
